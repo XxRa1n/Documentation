@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="loginPage.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form action="index.html" class="login-form">
+        <h1>Login</h1><!--标题-->
+        <div class="textbox"><!--用户名输入框-->
+            <input type="text"/>
+            <span data-placeholder="Username"></span>
+        </div>
+        <div class="textbox"><!--密码输入框-->
+            <input type="text"/>
+            <span data-placeholder="Password"></span>
+        </div>
+        <input type="submit" class="loginbtn" value="Login"/><!--登录按钮-->
+        <div class="bottomtext"><!--底部提示信息-->
+            Don't have account? <a href="#">Sign up</a>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        // document.querySelector(".textbox input").onfocus=function(){
+        //     this.classList.add("focus");
+        // };
+        // document.querySelector(".textbox input").onblur=function(){
+        //     if(this.value==""){
+        //         this.classList.remove("focus");
+        //     }
+        // }
+        //querySelector只能选中一个元素,而不是符合条件的所有元素.不好用
+        //querySelectorAll能选中所有符合条件的元素,但是返回的是一个数组,需要分别设置onfocus的值
+
+        $(".textbox input").on("focus",function(){
+            $(this).addClass("focus");
+        })
+        $(".textbox input").on("blur",function(){
+            if($(this).val()==""){
+                $(this).removeClass("focus");
+            }
+        })
+    </script>
+</body>
+</html>
